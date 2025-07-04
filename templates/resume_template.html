@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        :root {
+            --primary: #2d3748;
+            --accent: #4fd1c5;
+            --bg: #f7fafc;
+            --card-bg: #fff;
+            --text: #1a202c;
+            --muted: #718096;
+            --border: #e2e8f0;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 4px 32px rgba(44,62,80,0.08);
+            padding: 48px 40px;
+        }
+        h1, h2, h3 {
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            margin-top: 0;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+        h2 {
+            font-size: 1.4rem;
+            color: var(--accent);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 4px;
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+        h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        .section {
+            margin-bottom: 32px;
+        }
+        .muted {
+            color: var(--muted);
+            font-size: 0.95em;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .skill-badge {
+            background: var(--accent);
+            color: #fff;
+            border-radius: 12px;
+            padding: 4px 12px;
+            font-size: 0.95em;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 16px;
+            margin-bottom: 32px;
+        }
+        .header-info {
+            flex: 1;
+        }
+        .contact {
+            text-align: right;
+            font-size: 1em;
+        }
+        .contact a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-left: 12px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 8px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+            .contact {
+                text-align: left;
+                margin-top: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {{ content | safe }}
+    </div>
+</body>
+</html>
