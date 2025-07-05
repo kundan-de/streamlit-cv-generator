@@ -1,9 +1,8 @@
+import time
+
+import markdown
 import streamlit as st
 from jinja2 import Template
-
-import time
-import markdown
-
 from weasyprint import HTML
 
 
@@ -20,7 +19,6 @@ def main():
     st.title("📝 Markdown → Resume Generator")
 
     uploaded_file = st.file_uploader("Upload your Markdown Resume", type="md")
-
     download_flag = False
 
     if uploaded_file:
