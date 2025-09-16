@@ -25,10 +25,6 @@ streamlit run app.py
 
 Open your browser and go to `http://localhost:8501`.
 
-## Contributing
-
-Contributions are welcome! Please open issues or submit pull requests.
-
 ## License
 
 This project is licensed under the MIT License.

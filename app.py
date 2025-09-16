@@ -1,13 +1,15 @@
+import tempfile
+import time
+
+import markdown
 import streamlit as st
 from jinja2 import Template
-
-import time
-import markdown
-
 from weasyprint import HTML
 
+OUTPUT_FILE = tempfile.NamedTemporaryFile(suffix=".pdf").name
 
-def html_to_pdf(html_string, output_file="resume.pdf"):
+
+def html_to_pdf(html_string, output_file=OUTPUT_FILE):
     HTML(string=html_string).write_pdf(output_file)
 
 
@@ -45,7 +47,7 @@ def main():
 
         with col2:
             html_to_pdf(rendered_resume)
-            with open("resume.pdf", "rb") as pdf_file:
+            with open(OUTPUT_FILE, "rb") as pdf_file:
                 if st.download_button(
                     "📥 Download PDF", pdf_file, file_name="resume.pdf"
                 ):
